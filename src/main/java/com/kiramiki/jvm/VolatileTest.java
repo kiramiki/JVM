@@ -2,19 +2,28 @@ package com.kiramiki.jvm;
 
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * JMM 内存模型（虚拟叫法，实际并不存在）
  * 内存模型保证了java的可见性，原子性和有序性
- * 可见性指当多个线程修改同一数据时，如果内存可见，在一个线程修改后，会通知主内存，主内存会通知其他线程，相对于其他线程而言，变量的修改是可见的(各个线程之间得到的变量是主内存的copy)
+ * 1.1可见性指当多个线程修改同一数据时，如果内存可见，在一个线程修改后，会通知主内存，主内存会通知其他线程，相对于其他线程而言，变量的修改是可见的(各个线程之间得到的变量是主内存的copy)
  */
 class MyData{
     volatile Integer data = 0;
     public void SetDataTo60(){
         this.data = 60;
     }
+//    public synchronized void dataPlusPlus(){
+//        data++;
+//    }
     public void dataPlusPlus(){
         data++;
+    }
+
+    AtomicInteger atomicInteger = new AtomicInteger();
+    public void addMyAtomic(){
+        atomicInteger.getAndIncrement();
     }
 }
 
@@ -22,7 +31,12 @@ class MyData{
  * 1.0验证volatile的可见性
  * 假设data = 0；如果没有加volatile内存不可见将会进入死循环
  * 1.1volatile不保证原子性案例演示
- * 为什么不保证原子性呢？主要是在线程还没有读到主内存修改后的值，就已经进行了修改操作，也就是当线程1 将a = 1 变成 a=2后，通知给主内存，而线程二可能因为还没有唤醒或者其他等的原因，保存的还是a=1 的值，因此返回给主线程的也是a=2;
+ * 为什么不保证原子性呢？主要是在线程还没有读到主内存修改后的值，就已经进行了修改操作，也就是当线程1 将a = 1 变成 a=2后，
+ * 通知给主内存，而线程二可能因为还没有唤醒或者其他等的原因，保存的还是a=1 的值，因此返回给主线程的也是a=2;
+ * 1.2如何保证原子性？
+ * -----synchronized
+ * -----JUC下的atomicInteger
+ * -----cas
  */
 public class VolatileTest {
     public static void main(String[] args) {
@@ -31,6 +45,7 @@ public class VolatileTest {
             new Thread(()-> {
                 for (int j = 1 ; j <= 1000 ; j++){
                     myData.dataPlusPlus();
+                    myData.addMyAtomic();
                 }
             },String.valueOf(i)).start();
         }
@@ -40,6 +55,7 @@ public class VolatileTest {
         }
 
         System.out.println(Thread.currentThread().getName() + "\t  data = " + myData.data );
+        System.out.println(Thread.currentThread().getName() + "\t  data = " + myData.atomicInteger );
     }
 //    public static void main(String[] args) {
 //        MyData myData = new MyData();
