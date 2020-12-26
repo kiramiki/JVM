@@ -7,6 +7,14 @@
     <groupId>com.kiramiki.jvm</groupId>
     <artifactId>JVMTest</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId></groupId>-->
+<!--            <artifactId></artifactId>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
     <build>
         <plugins>
             <plugin>
