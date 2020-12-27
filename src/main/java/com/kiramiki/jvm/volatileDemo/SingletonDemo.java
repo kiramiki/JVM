@@ -1,4 +1,4 @@
-package com.kiramiki.jvm;
+package com.kiramiki.jvm.volatileDemo;
 
 public class SingletonDemo {
     private static volatile SingletonDemo singletonDemo= null;

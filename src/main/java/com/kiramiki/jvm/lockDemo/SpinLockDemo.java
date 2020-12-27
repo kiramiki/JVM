@@ -1,4 +1,4 @@
-package com.kiramiki.jvm;
+package com.kiramiki.jvm.lockDemo;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;

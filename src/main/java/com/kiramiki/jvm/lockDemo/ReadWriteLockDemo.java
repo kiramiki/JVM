@@ -1,10 +1,8 @@
-package com.kiramiki.jvm;
+package com.kiramiki.jvm.lockDemo;
 
-import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**

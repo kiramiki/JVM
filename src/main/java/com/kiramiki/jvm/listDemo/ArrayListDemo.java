@@ -1,7 +1,5 @@
-package com.kiramiki.jvm;
+package com.kiramiki.jvm.listDemo;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;

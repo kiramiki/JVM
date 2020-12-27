@@ -1,4 +1,4 @@
-package com.kiramiki.jvm;
+package com.kiramiki.jvm.volatileDemo;
 
 import java.util.concurrent.atomic.AtomicReference;
 

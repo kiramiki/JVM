@@ -1,7 +1,6 @@
-package com.kiramiki.jvm;
+package com.kiramiki.jvm.volatileDemo;
 
 
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**

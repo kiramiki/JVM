@@ -1,10 +1,7 @@
-package com.kiramiki.jvm;
+package com.kiramiki.jvm.listDemo;
 
-import java.util.HashMap;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class HashMapDemo {
     public static void main(String[] args) {
