@@ -1,0 +1,21 @@
+
+server:
+  port: 8080
+
+
+person:
+  name: zhangl ${random.uuid}
+  age: 18 ${random.int}
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8081
+spring:
+  profiles: dev
+---
+server:
+  port: 8082
+spring:
+  profiles: prod
