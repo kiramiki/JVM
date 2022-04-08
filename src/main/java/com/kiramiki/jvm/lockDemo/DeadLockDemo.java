@@ -14,6 +14,8 @@ class MyResource implements Runnable{
 
     @Override
     public void run() {
+        System.out.println("lockA = " + lockA);
+        System.out.println("lockB = " + lockB);
         synchronized (lockA){
             System.out.println(Thread.currentThread().getName()+"自己持有-----"+ lockA + "尝试获得" + lockB);
             try {

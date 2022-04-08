@@ -1,6 +1,8 @@
 package com.kiramiki.jvm.callableDemo;
 
 
+import cn.hutool.core.bean.BeanUtil;
+
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;

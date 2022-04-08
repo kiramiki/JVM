@@ -49,11 +49,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class HelloGC {
     public static void main(String[] args) {
-//        try {
-//            TimeUnit.SECONDS.sleep(Integer.MAX_VALUE);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        Byte[] bytes =new Byte[50*1024*1024];
+        try {
+            TimeUnit.SECONDS.sleep(Integer.MAX_VALUE);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Byte[] bytes =new Byte[50*1024*1024];
     }
 }

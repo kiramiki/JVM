@@ -10,9 +10,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 class MyData{
     volatile Integer data = 0;
-    public void SetDataTo60(){
-        this.data = 60;
-    }
+//    public void SetDataTo60(){
+//        this.data = 60;
+//    }
 //    public synchronized void dataPlusPlus(){
 //        data++;
 //    }
