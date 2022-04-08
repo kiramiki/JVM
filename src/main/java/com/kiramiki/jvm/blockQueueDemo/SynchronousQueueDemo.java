@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class SynchronousQueueDemo {
     public static void main(String[] args) {
-        BlockingQueue<String> blockingQueue = new SynchronousQueue();
+        SynchronousQueue<String> blockingQueue = new SynchronousQueue<>();
         new Thread(() -> {
             try {
                 blockingQueue.put("a");
@@ -21,7 +21,7 @@ public class SynchronousQueueDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }, "aaa").start();
+        }, "ccc").start();
 
         new Thread(() -> {
             try {

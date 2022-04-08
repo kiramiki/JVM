@@ -13,7 +13,7 @@ public class SyncDemo {
     static Condition condition = lock.newCondition();
 
     /**
-     * lockSupport的park和unpark方法作用跟wait和notify一样，但是他的使用非常方便，第一屎他不需要在锁内使用，第二是他的顺序是可以先unpark在park的。
+     * lockSupport的park和unpark方法作用跟wait和notify一样，但是他的使用非常方便，第一是他不需要在锁内使用，第二是他的顺序是可以先unpark在park的。
      *  为什么顺序可以相反？
      *      因为lockSupport底层有一个机制是许可证机制，当你持有许可证时，才允许放行，否则就会被阻塞，每当执行park方法时，都会消耗许可证
      *      而unpark方法会发放许可证，但是许可证他的最大容量只能是1，这也就说明了，当你多次调用unpark时，不会增加许可证，此时如果你的park有多个，但是只会有一个park拿到许可证，其他都会被阻塞
