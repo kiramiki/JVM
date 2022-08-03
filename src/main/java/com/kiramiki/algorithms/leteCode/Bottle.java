@@ -1,4 +1,4 @@
-package com.kiramiki.leteCode;
+package com.kiramiki.algorithms.leteCode;
 
 public class Bottle {
 

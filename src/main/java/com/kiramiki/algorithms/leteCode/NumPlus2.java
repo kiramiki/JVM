@@ -1,4 +1,4 @@
-package com.kiramiki.leteCode;
+package com.kiramiki.algorithms.leteCode;
 
 import java.util.HashMap;
 import java.util.Map;

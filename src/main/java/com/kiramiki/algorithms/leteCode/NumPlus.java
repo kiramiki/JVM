@@ -1,4 +1,4 @@
-package com.kiramiki.leteCode;
+package com.kiramiki.algorithms.leteCode;
 
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
