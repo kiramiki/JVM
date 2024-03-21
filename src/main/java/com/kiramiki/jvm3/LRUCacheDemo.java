@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 /**
  * LRU算法
+ *
  */
 public class LRUCacheDemo {
     static class Node<K,V>{
@@ -103,6 +104,10 @@ public class LRUCacheDemo {
         lruCacheDemo.put(3,1);
         System.out.println(lruCacheDemo.map.keySet());
         lruCacheDemo.put(5,5);
+        System.out.println(lruCacheDemo.map.keySet());
+        lruCacheDemo.put(6,6);
+        System.out.println(lruCacheDemo.map.keySet());
+        lruCacheDemo.put(7,7);
         System.out.println(lruCacheDemo.map.keySet());
     }
 }
